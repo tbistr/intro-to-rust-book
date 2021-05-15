@@ -20,6 +20,10 @@ impl RpnCalculator {
                 let x = stack.pop().expect("invalid syntax");
                 let res = match token {
                     "+" => x + y,
+                    "-" => x - y,
+                    "*" => x * y,
+                    "/" => x / y,
+                    "%" => x % y,
                     _ => panic!("invalid token"),
                 };
                 stack.push(res);
