@@ -4,3 +4,9 @@ FROM mcr.microsoft.com/vscode/devcontainers/rust:0-1
 # [Optional] Uncomment this section to install additional packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
+
+USER vscode
+
+RUN cargo install cargo-binutils cargo-edit
+RUN rustup target add thumbv7em-none-eabi
+RUN rustup component add llvm-tools-preview
