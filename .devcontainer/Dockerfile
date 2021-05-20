@@ -7,6 +7,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/rust:0-1
 
 USER vscode
 
+# dependencies for generate stm32 binary
 RUN cargo install cargo-binutils cargo-edit
 RUN rustup target add thumbv7em-none-eabi
 RUN rustup component add llvm-tools-preview
